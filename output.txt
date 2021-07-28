@@ -1,0 +1,1 @@
+H/W path Device Class Description ===================================================== /0/100/3 enp0s3 network 82540EM Gigabit Ethernet Controller
