@@ -11,9 +11,10 @@
 # to contain variables in them
 
 # FUNCTION
-WhoCameBefore() {
- last $USER
+LastTimeHere() {
+
+sudo last $USER
+
 }
 
-echo WhoCameBefore
-
+LastTimeHere
