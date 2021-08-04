@@ -18,12 +18,12 @@ sleep 3
 
 # SYSTEM STATS
 echo "Name and Model of Host Computer:"
-sudo lshw | grep -B 1 -Em1 'description:'
+lshw | grep -B 1 -Em1 'description:'
 echo
 
 # CPU STATS
 echo "CPU Info:"
-sudo lshw -C cpu | grep -E 'product:|vendor|physical id|bus info|width'
+lshw -C cpu | grep -E 'product:|vendor|physical id|bus info|width'
 echo
 
 # RAM STATS
@@ -33,12 +33,12 @@ echo
 
 # DISPLAY ADAPTER STATS
 echo "Display Adapter:"
-sudo lshw -C display | grep -E 'description:|product|vendor|physical id|bus info|width|clock|capabilities|configuration|resources'
+lshw -C display | grep -E 'description:|product|vendor|physical id|bus info|width|clock|capabilities|configuration|resources'
 echo
 
 # NETWORK ADAPTER STATS
 echo "Network Adapter:"
-sudo lshw -c network | grep -E 'description:|product|vendor|physical id|bus info|logical name|version|serial|size|capacity|width|clock|capabilities|configuration|resources'
+lshw -c network | grep -E 'description:|product|vendor|physical id|bus info|logical name|version|serial|size|capacity|width|clock|capabilities|configuration|resources'
 
 sleep 3
 echo
