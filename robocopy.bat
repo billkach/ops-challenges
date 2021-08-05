@@ -1,9 +1,9 @@
 
 
-:: Script Name                           My First Loop
+:: Script Name                           robocopy.bat
 :: Author                                Bill Kachersky
-:: Date of last revision                 07/30/2021
-:: Description of purpose                To Create and Test a While Loop, with USER INTERACTION!
+:: Date of last revision                 08/05/2021
+:: Description of purpose                Batch Script for Copying files using Robocopy
 
 
 @echo off
