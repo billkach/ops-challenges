@@ -13,23 +13,23 @@ $End=Get-Date -Date '8/5/2021'
 # FUNCTIONS
 function Last-24-Out { 
     Get-EventLog -LogName System -After $Begin -Before $End | format-table -wrap | Out-File -FilePath .\last_24.txt
-    }
+}
     
-    function Syslog-Error-Out {
+function Syslog-Error-Out {
     Get-EventLog -LogName System -EntryType Error | format-table -wrap | Out-File -filepath .\errors.txt
-    }
+}
     
-    function Syslog-EventID-16 {
+function Syslog-EventID-16 {
     Get-EventLog -LogName System -InstanceId 16 | format-table -wrap
-    }
+}
     
-    function Syslog-Top-20 {
+function Syslog-Top-20 {
     Get-EventLog -LogName System -Newest 20 | format-table -wrap
-    }
+}
     
-    function Syslog-Fortune500 {
+function Syslog-Fortune500 {
     Get-EventLog -LogName System -Newest 500 | Group-Object -Property Source | format-table -auto -wrap
-    }
+}
 
 
 
