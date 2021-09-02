@@ -6,9 +6,6 @@
 # Description of purpose                Ops 301 Class 03 Ops Challenge
 
 
-# Variables
-
-date=$(date +"%Y%m%d%H%M%S")
 
 # Functions
 
