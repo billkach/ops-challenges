@@ -100,12 +100,14 @@ else
                         
                             exit 0
                         
-                        else
+                        fi
+                        
+            else
 
-                            echo "Hmmm, I don't think we serve that here.."
+                echo "Hmmm, I don't think we serve that here.."
 
-                            exit 3
-                fi
+                exit 3
+            
 
             fi
 
