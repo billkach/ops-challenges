@@ -9,8 +9,6 @@
 
 $AUSettings=(New-Object -com "Microsoft.Update.AutoUpdate").Settings
 
-$AUSettings.NotificationLevel=2
-
-$AUSettings.FeaturedUpdatesEnabled=True
+$AUSettings.NotificationLevel=4
 
 $AUSettings.Save()
