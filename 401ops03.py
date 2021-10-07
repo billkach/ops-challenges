@@ -11,7 +11,6 @@ import time
 import sys
 import io 
 from io import StringIO
-from time import gmtime, strftime
 from datetime import datetime
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -31,8 +30,6 @@ ipaddr = input("Enter an IP address to check the status of: ")
 
 # Variable
 server_status=1
-# response
-# response = os.system("ping -c 1 " + ipaddr)
 
 # Main
 
@@ -40,7 +37,8 @@ while True:
         time.sleep(2)
         response = os.system("ping -c 1 " + ipaddr)
         dt = datetime.now()
-        current_time=strftime("%x %X", gmtime())
+        # the variables below are to take the output of the forthcoming conditional and pipe them into a variable
+        # because datetime doesn't play nice with line 63
         old_stdout = sys.stdout
         new_stdout = io.StringIO()
         sys.stdout = new_stdout
@@ -51,7 +49,7 @@ while True:
         else:
             print(dt, "ping failed for", ipaddr)
 
-
+        # this enables you to take the output from the above conditional and pipe it into a new variable
         output = new_stdout.getvalue()
         sys.stdout = old_stdout
         
