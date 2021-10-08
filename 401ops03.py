@@ -17,9 +17,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # Mail address info
-sender_address = 'billisatechie@gmail.com'
-sender_pass = 'L10n1z3r@$G!'
-receiver_address = 'billisatechie@gmail.com'
+sender_address = 'enteremail@server.com'
+sender_pass = 'xxxxxxx'
+receiver_address = 'enteremail@server.com'
 
 
 
