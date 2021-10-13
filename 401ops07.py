@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-# Script Name                           401ops06.py
+# Script Name                           401ops07.py
 # Author                                Bill Kachersky
-# Date of last revision                 10/11/2021
-# Description of purpose                Encryption/Decryption Script
+# Date of last revision                 10/12/2021
+# Description of purpose                Encryption/Decryption Script Part 2
 
 
 # Imports
