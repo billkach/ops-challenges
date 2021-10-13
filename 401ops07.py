@@ -29,29 +29,33 @@ def load_key():
     """
     return open("key.key", "rb").read()
 
-
+# Thank you Courtney for this AWESOME IDEA.
+# writes key only if necessary
 def key_check():
     key = load_key()
     if key == None:
         key = write_key()
     return Fernet(key)
 
+# string/message encryption
 def msg_en():
     msg = input("Type your message: ")
     f = key_check()
     message = msg.encode()
     encrypted = f.encrypt(message)
     print("Alright, encrypted! Let's see how it looks...")
-    print(encrypted)
+    print(str(encrypted)[2:-1])
 
+# string/message decryption
 def msg_de():
     msgt = input("Type your message: ")
     time.sleep(1)
     message = str.encode(msgt)
     f = key_check()
     decrypted_encrypted = f.decrypt(message)
-    print(str(decrypted_encrypted))
+    print(str(decrypted_encrypted)[2:-1])
 
+# Single file encryption
 def file_en():
     filename = input("Please input the filepath for the file you would like to encrypt: ")
     time.sleep(1)
@@ -62,6 +66,7 @@ def file_en():
     with open(filename, "wb") as file:
         file.write(encrypted_data)
 
+# Single file decryption
 def file_de():
     filename = input("Please input the filepath for the file you'd like to decrypt: ")
     time.sleep(1)
@@ -72,6 +77,7 @@ def file_de():
     with open(filename, "wb") as file:
         file.write(decrypted_data)
 
+# recursive encryption of a dir
 def recursive_en(filename):
     f = key_check()
     with open(filename, "rb") as file:
@@ -80,6 +86,7 @@ def recursive_en(filename):
     with open(filename, "wb") as file:
         file.write(encrypted_data)
 
+# recursive decryption of a dir
 def recursive_de(filename):
     f = key_check()
     with open(filename, "rb") as file:
@@ -89,16 +96,16 @@ def recursive_de(filename):
         file.write(decrypted_data)
 
 def dir_encrypt():
-    enpath = input("Enter the absolute path to the directory you want to encrypt: ")
-    for dirpath, dirnames, filenames in os.walk(enpath):
+    path = input("Enter the absolute path to the directory you want to encrypt: ")
+    for dirpath, dirnames, filenames in os.walk(path):
         print('Directory: {:s}'.format(dirpath))
         for file in filenames:
             filename = os.path.join(dirpath,file)
             recursive_en(filename)
 
 def dir_decrypt():
-    depath = input("Enter the absolute filepath to the directory you would like to decrypt: ")
-    for dirpath, dirnames, filenames in os.walk(depath):
+    path = input("Enter the absolute filepath to the directory you would like to decrypt: ")
+    for dirpath, dirnames, filenames in os.walk(path):
         print('Directory: {:s}'.format(dirpath))
         for file in filenames:
             filename = os.path.join(dirpath,file)
@@ -110,7 +117,7 @@ def main():
     while True:
         slct ='0'
         while slct =='0':
-            print("Choose 1 of 6 choices")
+            print("Choose 1 of 7 choices")
             time.sleep(1)
             print("1. Encrypt a file")
             print("2. Decrypt a file")
@@ -123,7 +130,7 @@ def main():
 
   
     ## Displays menu
-            slct = input("Enter your choice [1-5]: ")
+            slct = input("Enter your choice [1-7]: ")
      
             if slct == "1":
                 print("Alright, let's encrypt a file!")
@@ -156,7 +163,7 @@ def main():
                 print("What would you like to do next?")
 
             elif slct == "6":
-                print("Alright, lettuce recursively encrypt directory!")
+                print("Alright, lettuce recursively decrypt directory!")
                 dir_decrypt()
                 print("What would you like to do next?")
 
@@ -172,7 +179,6 @@ def main():
 
 # Main
 
-write_key()
 print("Welcome to the encrypt/decrypt-ionary!!!")
 time.sleep(1)
 main()
