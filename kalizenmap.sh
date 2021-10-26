@@ -1,7 +1,9 @@
-Script Name                        kalizenmap.sh
-Author                             Bill Kachersky
-Date of last revision              10/22/2021
-Purpose                            Zenmap Install Script for Kali Linux
+#!/bin/bash
+
+# Script Name                        kalizenmap.sh
+# Author                             Bill Kachersky
+# Date of last revision              10/22/2021
+# Purpose                            Zenmap Install Script for Kali Linux
 
 
 # This script is meant for Zenmap version 7.92 specifically, please be sure to check 
