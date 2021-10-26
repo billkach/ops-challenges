@@ -5,6 +5,9 @@
 # Date of last revision                 10/25/2021
 # Description of purpose                Brute Force Tool Part 1
 
+# Resources and Thanks:
+# https://github.com/codefellows/seattle-cyber-401d3/blob/main/class-16/challenges/DEMO.md
+# https://www.geeksforgeeks.org/python-how-to-search-for-a-string-in-text-files/
 
 # Import libraries
 import time, getpass
