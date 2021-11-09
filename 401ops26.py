@@ -2,8 +2,8 @@
 
 # Script Name                           401ops18.py
 # Author                                Bill Kachersky
-# Date of last revision                 10/27/2021
-# Description of purpose                Brute Force Tool Part 3
+# Date of last revision                 11/08/2021
+# Description of purpose                Logger Tool Part 1
 
 
 
@@ -25,7 +25,8 @@ import zipfile
 from zipfile import ZipFile
 import logging
 
-
+# log=logging.getLogger("testlog")
+logging.basicConfig(filename='test.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
 
 # Declare functions
@@ -101,7 +102,7 @@ def ssh_connect(password, code = 0):
     return code
 
 def ssh_pass():
-    logging.basicConfig(filename='test.log', encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s')
+    logging.debug("Doing something!")    
     iteratefile = open(input_file, 'r', encoding = "ISO-8859-1")
 
     print("")
@@ -171,7 +172,7 @@ def zipcrack():
 
 # Main
 
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 
 if __name__ == "__main__": # when my computer runs this file...do this stuff
     while True:
