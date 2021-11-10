@@ -2,8 +2,8 @@
 
 # Script Name                           401ops18.py
 # Author                                Bill Kachersky
-# Date of last revision                 11/08/2021
-# Description of purpose                Logger Tool Part 1
+# Date of last revision                 11/09/2021
+# Description of purpose                Logger Tool Part 2
 
 
 
