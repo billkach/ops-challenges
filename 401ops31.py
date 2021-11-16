@@ -17,8 +17,11 @@ import platform
 import os
 from time import sleep
 
+# Variables
 
 my_os = platform.system()
+
+
 
 # Functions
 
